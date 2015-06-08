@@ -11,7 +11,8 @@
 
 (defn post-tweet
   [username tweet]
-  (swap! timelines add-tweet username tweet))
+  (swap! timelines add-tweet username tweet)
+  "success!")
 
 (defn get-tweets
   [username]

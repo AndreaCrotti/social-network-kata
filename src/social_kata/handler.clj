@@ -8,11 +8,11 @@
 (defn- emit-json
   [x & [status]]
   (let [json-data (json/json-str x)]
-    {:headers {"Content-Type" "application/json"
-               "Vary" "Accept-Encoding"
+    {:headers {"Content-Type"   "application/json"
+               "Vary"           "Accept-Encoding"
                "Content-Length" (str (.length json-data))}
-     :status (or status 200)
-     :body json-data}))
+     :status  (or status 200)
+     :body    json-data}))
 
 (defroutes app-routes
   (GET "/" [] "Welcome to the social network")
