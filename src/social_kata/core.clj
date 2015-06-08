@@ -31,3 +31,7 @@
   [follower following]
   (swap! followers add-el follower following)
   "success")
+
+
+(defn get-users [] (keys @timelines))
+

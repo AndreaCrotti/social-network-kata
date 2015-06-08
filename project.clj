@@ -14,4 +14,5 @@
                  [compojure "1.3.4"]
                  [ring "1.4.0-RC1"]
                  [ring/ring-defaults "0.1.5"]
-                 [org.clojure/data.json "0.2.6"]])
+                 [org.clojure/data.json "0.2.6"]
+                 [hiccup "1.0.5"]])
