@@ -13,9 +13,13 @@
 
 (defn post-tweet
   [username tweet]
-  (swap! timelines add-el timelines username tweet)
+  (swap! timelines add-el username tweet)
   "success!")
 
+
+(defn get-feed
+  [username]
+  (@followers username))
 
 (defn get-tweets
   [username]
@@ -24,4 +28,4 @@
 
 (defn subscribe
   [follower following]
-  (swap! followers add-el followers following))
+  (swap! followers add-el follower following))
