@@ -5,7 +5,7 @@
             [compojure.route :as route]))
 
 (defroutes app-routes
-  (GET "/" [] "Welcome to social the network")
+  (GET "/" [] "Welcome to the social network")
   (GET "/tweets" [username] (get-tweets username))
   (POST "/tweet" [username message] (post-tweet username message))
   (route/not-found "Not found"))
