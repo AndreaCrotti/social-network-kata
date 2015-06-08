@@ -19,7 +19,9 @@
 
 (defn get-feed
   [username]
-  (@followers username))
+  (let [following (@followers username)]
+    (flatten
+     (for [l following] (social-kata.core/get-tweets l)))))
 
 (defn get-tweets
   [username]
