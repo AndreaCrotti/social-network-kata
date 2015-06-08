@@ -1,18 +1,19 @@
 (ns social-kata.core)
 
-(def timelines (atom {}))
+(def timelines (atom {"natasha" ["hello world!"]
+                      "andrea" ["this is not a tweet"]
+                      "alex" ["does this work?"]}))
 
 (defn add-tweet
   [a-timeline username tweet]
   (merge-with concat a-timeline {username [tweet]}))
 
 
-(defn post
+(defn post-tweet
   [username tweet]
   (swap! timelines add-tweet username tweet))
 
+(defn get-tweets
+  [username]
+  (@timelines username))
 
-(defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
