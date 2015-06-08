@@ -18,6 +18,12 @@
   (GET "/" [] "Welcome to the social network")
   (GET "/tweets" [username] (emit-json (get-tweets username)))
   (POST "/tweet" [username message] (emit-json (post-tweet username message)))
+  (POST "/subscribe" [follower following]
+        (emit-json (subscribe follower following)))
+
+  (GET "/feed" [username]
+       (emit-json (get-feed username)))
+
   (route/not-found "Not found"))
 
 (def app
