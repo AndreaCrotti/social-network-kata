@@ -11,4 +11,6 @@
   :plugins [[lein-ring "0.8.13"]]
 
   :dependencies [[org.clojure/clojure "1.6.0"]
-                 [compojure "1.3.4"]])
+                 [compojure "1.3.4"]
+                 [ring "1.4.0-RC1"]
+                 [ring/ring-defaults "0.1.5"]])
