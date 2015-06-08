@@ -16,18 +16,18 @@
   (swap! timelines add-el username tweet)
   "success!")
 
+(defn get-tweets
+  [username]
+  (@timelines username))
 
 (defn get-feed
   [username]
   (let [following (@followers username)]
     (flatten
-     (for [l following] (social-kata.core/get-tweets l)))))
-
-(defn get-tweets
-  [username]
-  (@timelines username))
+     (for [el following] (get-tweets el)))))
 
 
 (defn subscribe
   [follower following]
-  (swap! followers add-el follower following))
+  (swap! followers add-el follower following)
+  "success")
